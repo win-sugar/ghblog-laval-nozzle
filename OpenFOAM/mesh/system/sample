@@ -1,0 +1,55 @@
+
+sampling
+{
+    type                    sets;
+    libs                    (sampling);
+    setFormat               raw;
+    interpolationScheme     cellPoint;//cell;
+    fields                  (T U p rho);
+    writeControl            timeStep;
+    writeInterval           1;
+    log                     on;
+    enabled                 true;
+
+    sets
+    (
+        probeline
+        {
+            type        uniform;
+            axis        distance;
+            start       (0      0 0);
+            end         (0.254  0 0);
+            nPoints     301;
+        }
+    );
+}
+
+
+history
+{
+    type                    sets;
+    libs                    (sampling);
+    setFormat               raw;
+    interpolationScheme     cellPoint;//cell;
+    fields                  (T p);
+    writeControl            timeStep;
+    writeInterval           1e3;
+    log                     on;
+    enabled                 false;
+
+    sets
+    (
+        probepoint
+        {
+            type        cloud;
+            axis        x;
+            points
+            (
+                 (0.0635 0 0)
+                 (0.127  0 0)
+                 (0.1905 0 0)
+            );
+        }
+    );
+}
+
