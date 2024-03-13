@@ -26,11 +26,11 @@ blockMeshを使い、[メッシュを作成](./mesh/meshing.md)した。
 
 ここで $p_e$は出口圧力、$p_t$はよどみ点圧力(流入条件)である。
 
-case-1 : [pe=0.89の解析](./pe-0.89/dummy.md)
+case-1 : [pe=0.89の解析](./pe-0.89/pe089.md)
 
 
 case-2 : [pe=0.75の解析](./pe-0.75/pe075.md)
 
 
-case-3 : [pe=0.16の解析](./pe-0.16/dummy.md)
+case-3 : [pe=0.16の解析](./pe-0.16/pe016.md)
 
