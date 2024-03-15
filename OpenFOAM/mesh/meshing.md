@@ -207,7 +207,24 @@ pointの配置は以下のようになっている。軸対称モデルなので
 
 ## blockMeshの実行
 
-ケースディレクトリ内で blockMeshとタイプすることでメッシュが作成される。
+ケースディレクトリ内で blockMeshとタイプすることでメッシュが作成される。ただし、標準設定の
+ままだと以下のような警告メッセージがたくさん出力される（メッシュはできているぽい）
+
+```
+--> FOAM Warning :
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 73
+    Wedge patch 'wedge2' is not planar.
+At local face at (0.253364 0.0170957 0.000746413) the normal (-7.04761e-07 -0.0436194 0.999048) differs from the average normal (-2.02391e-10 -0.0436194 0.999048) by 4.97371e-13
+Either correct the patch or split it into planar parts
+```
+
+この警告を抑制するためには、 system/controlDict の writePrecisionの数値を大きくする。例えば
+
+```
+writePrecision  10;    // increased 6 -> 10
+```
+
 最終的なメッシュは以下のようになる。
 
 ![メッシュ分割図](./mesh.png)
