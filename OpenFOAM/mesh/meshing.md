@@ -15,7 +15,8 @@ OpenFOAMの軸対称モデルを使って計算を行う。ここでは blockMes
       area = 1.25 - 0.25 * cos( ( 0.2 * x - 1.0 ) * pi )
     endif
 ```
-注：ここで  $0 \le x \le 10 [inch]$
+注：ここで  $0 \le x \le 10 [inch]$。$`A=\pi r^2`$から半径$`r`$の分布を
+計算すると以下のようになる。
 
 ![nozzle-geometry](./geom.png)
 
